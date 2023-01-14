@@ -1,1 +1,18 @@
-# empty
+Name: CI
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-lastest
+    steps:
+    - uses: actions/cheakout@v2
+    - name: Run 1 line script
+      run: echo Hello, world!
+    - name: Run multi-line script
+      run: |
+        echo Add other actionto build,
+        echo test, and deploy your project.
